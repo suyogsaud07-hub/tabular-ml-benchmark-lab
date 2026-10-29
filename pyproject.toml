@@ -7,7 +7,11 @@ authors = [
     { name = "SUYOG SAUND", email = "suyogsaud143@gmail.com" }
 ]
 requires-python = ">=3.11"
-dependencies = []
+dependencies = [
+    "matplotlib>=3.11.2",
+    "numpy>=2.4.6",
+    "pandas>=3.1.0",
+]
 
 [project.scripts]
 tabular-ml-benchmark-lab = "tabular_ml_benchmark_lab:main"
