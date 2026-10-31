@@ -27,19 +27,19 @@ print("\n========== 6. TARGET DISTRIBUTION ==========")
 target_counts = df["y"].value_counts()
 target_percentages = df["y"].value_counts(normalize=True).mul(100)
 
-target_summary = pd.DataFrame({
-    "count": target_counts,
-    "percentage": target_percentages.round(2),
-})
+target_summary = pd.DataFrame(
+    {
+        "count": target_counts,
+        "percentage": target_percentages.round(2),
+    }
+)
 print(target_summary.to_string())
 
 print("\n========== 7. NUMERICAL SUMMARY ==========")
 print(df.describe().round(2).to_string())
 
 print("\n========== 8. CATEGORICAL SUMMARY ==========")
-print(df[["job", "marital", "education", "contact", "poutcome"]]
-      .describe()
-      .to_string())
+print(df[["job", "marital", "education", "contact", "poutcome"]].describe().to_string())
 
 print("\n========== 9. MODELLING WARNING ==========")
 print(

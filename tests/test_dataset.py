@@ -7,9 +7,23 @@ import pytest
 DATA_PATH = Path(__file__).resolve().parents[1] / "data" / "raw" / "bank-full.csv"
 
 EXPECTED_COLUMNS = [
-    "age", "job", "marital", "education", "default", "balance",
-    "housing", "loan", "contact", "day", "month", "duration",
-    "campaign", "pdays", "previous", "poutcome", "y",
+    "age",
+    "job",
+    "marital",
+    "education",
+    "default",
+    "balance",
+    "housing",
+    "loan",
+    "contact",
+    "day",
+    "month",
+    "duration",
+    "campaign",
+    "pdays",
+    "previous",
+    "poutcome",
+    "y",
 ]
 
 
@@ -50,10 +64,7 @@ def test_dataset_has_no_empty_cells(dataset):
 
 def test_dataset_has_no_duplicate_rows(dataset):
     columns, rows = dataset
-    unique_rows = {
-        tuple(row[column] for column in columns)
-        for row in rows
-    }
+    unique_rows = {tuple(row[column] for column in columns) for row in rows}
     assert len(unique_rows) == len(rows)
 
 
